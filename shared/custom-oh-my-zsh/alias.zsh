@@ -1,4 +1,6 @@
-alias vial='vim  $ZSH_CUSTOM/alias.zsh'
+alias vial='nvim  $ZSH_CUSTOM/alias.zsh'
+alias vi='nvim'
+alias vim='nvim'
 alias k='kubectl'
 alias xargs='xargs '
 alias tf='terraform'

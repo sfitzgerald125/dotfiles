@@ -38,6 +38,7 @@ echo "====================="
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -s ${BASEDIR}/.zshrc ~/.zshrc
+ln -s ${BASEDIR}/.tmux ~/.tmux
 ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
 
 # make .config directory if it doesn't already exist

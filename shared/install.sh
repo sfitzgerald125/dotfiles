@@ -37,9 +37,13 @@ echo "Creating symlinks to dotfiles"
 echo "====================="
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ln -s ${BASEDIR}/.vimrc ~/.vimrc
 ln -s ${BASEDIR}/.zshrc ~/.zshrc
+ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
+
+# make .config directory if it doesn't already exist
+mkdir -p ~/.config
+ln -s ${BASEDIR}/nvim ~/.config/nvim
 
 echo "====================="
-echo "Finished creatng symlinks to dotfiles"
+echo "Finished creating symlinks to dotfiles"
 echo -e "=====================\n"

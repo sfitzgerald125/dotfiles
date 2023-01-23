@@ -23,6 +23,12 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
+-- bufferline
+vim.keymap.set("n", "<leader><Tab>", ":bnext<CR>")
+vim.keymap.set("n", "<leader><S-Tab>", ":bprev<CR>")
+vim.keymap.set("n", "<leader><BS>", ":bd<CR>")
+
+
 -- split windows
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally

@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
 
   -- AST Plugin
   use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
-  
+
   -- auto closing
   use("windwp/nvim-autopairs")
   use("windwp/nvim-ts-autotag")
@@ -74,5 +74,8 @@ return require('packer').startup(function(use)
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
+
+  -- bufferline
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 end)
 

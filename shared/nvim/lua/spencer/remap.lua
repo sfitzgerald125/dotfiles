@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>re", ":NvimTreeRefresh<CR>")
 
 -- bufferline
 vim.keymap.set("n", "<leader><Tab>", ":bnext<CR>")

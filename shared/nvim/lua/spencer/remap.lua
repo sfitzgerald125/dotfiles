@@ -21,7 +21,7 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- nvim-tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>re", ":NvimTreeRefresh<CR>")
 
 -- bufferline

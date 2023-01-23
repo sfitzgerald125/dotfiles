@@ -26,6 +26,10 @@ return require('packer').startup(function(use)
   -- AST Plugin
   use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
 
+  -- Prettier
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP
+
   -- auto closing
   use("windwp/nvim-autopairs")
   use("windwp/nvim-ts-autotag")

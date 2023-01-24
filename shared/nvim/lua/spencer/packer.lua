@@ -24,7 +24,10 @@ return require('packer').startup(function(use)
   })
 
   -- AST Plugin
-  use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
   -- Prettier
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server
@@ -81,5 +84,11 @@ return require('packer').startup(function(use)
 
   -- bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use("tpope/vim-surround")
+
+  use("ThePrimeagen/vim-be-good")
+
+  use("lukas-reineke/indent-blankline.nvim")
 end)
 

@@ -83,12 +83,23 @@ return require('packer').startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   -- bufferline
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
+  -- normal mode: cs<change-from><change-to>
+  -- normal mode: ys<add-chars>
+  -- normal mode: ds<del-char>
+  -- visual mode: VS<add-chars>
   use("tpope/vim-surround")
 
   use("ThePrimeagen/vim-be-good")
 
+  -- guidelines
   use("lukas-reineke/indent-blankline.nvim")
+
+  -- file window manager
+  use("theprimeagen/harpoon")
+
+  -- undotree
+  use("mbbill/undotree")
 end)
 

@@ -32,10 +32,10 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize current split window
 
 -- tab navigation (Deprecated in favor of Bufferline)
--- vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
--- vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
--- vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
--- vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
+vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
 -- bufferline
 vim.keymap.set("n", "<leader><Tab>", ":bnext<CR>")

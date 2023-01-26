@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   }
 
   -- File Explorer
+  -- cd to current dir <C-]>
   use {
     "nvim-tree/nvim-tree.lua",
     requires = {
@@ -83,7 +84,7 @@ return require('packer').startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   -- bufferline
-  -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- normal mode: cs<change-from><change-to>
   -- normal mode: ys<add-chars>

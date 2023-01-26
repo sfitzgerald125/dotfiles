@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- find and replace given word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
@@ -31,13 +31,10 @@ vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize current split window
 
--- tab navigation (Deprecated in favor of Bufferline)
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
-
--- bufferline
+-- buffer navigation
+vim.keymap.set("n", "<leader>bo", ":enew<CR>")
+vim.keymap.set("n", "<leader><BS>", ":bp <BAR> bd #<CR>")
 vim.keymap.set("n", "<leader><Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<leader><S-Tab>", ":bprev<CR>")
-vim.keymap.set("n", "<leader><BS>", ":bd<CR>")
+vim.keymap.set("n", "<leader>bl", ":ls<CR>")
+vim.keymap.set("n", "<leader>br", ":edit!<CR>")

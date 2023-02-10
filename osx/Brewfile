@@ -24,4 +24,5 @@ brew "wget"
 
 cask "google-cloud-sdk"
 cask "spotify"
-cask "visual-studio-code"
+cask "bitwarden"
+cask "font-meslo-lg-nerd-font"

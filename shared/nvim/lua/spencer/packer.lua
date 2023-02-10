@@ -70,7 +70,7 @@ return require('packer').startup(function(use)
     "nvim-tree/nvim-tree.lua",
     requires = {
       "nvim-tree/nvim-web-devicons",
-    },
+    }
   }
 
   -- tmux & split window navigation
@@ -102,5 +102,11 @@ return require('packer').startup(function(use)
 
   -- undotree
   use("mbbill/undotree")
+
+  -- preview markdown files
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
 

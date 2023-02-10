@@ -1,5 +1,5 @@
 alias nconfig='nvim ~/.config/nvim'
-alias vial='nvim  $ZSH_CUSTOM/alias.zsh'
+alias vial='nvim $ZSH_CUSTOM/alias.zsh'
 alias vi='nvim'
 alias vim='nvim'
 alias k='kubectl'

@@ -1,8 +1,8 @@
 # Getting Started
 Clone this repo into your home directory, and then run the install scripts depending on the OS.
-### Linux
+### Debian
 
-From the root directory, run `./linux/install.sh`
+From the root directory, run `./debian/install.sh`
 
 ### OSX
 

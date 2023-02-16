@@ -21,6 +21,7 @@ brew "tree"
 brew "watch"
 brew "xz"
 brew "wget"
+brew "prettierd"
 
 cask "google-cloud-sdk"
 cask "spotify"

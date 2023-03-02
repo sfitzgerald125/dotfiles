@@ -34,8 +34,8 @@ vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize current sp
 -- buffer navigation
 vim.keymap.set("n", "<leader>bo", ":enew<CR>")
 vim.keymap.set("n", "<leader><BS>", ":bp <BAR> bd #<CR>")
-vim.keymap.set("n", "<leader><Tab>", ":bnext<CR>")
-vim.keymap.set("n", "<leader><S-Tab>", ":bprev<CR>")
+vim.keymap.set("n", "<Tab>", ":bnext<CR>")
+vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bl", ":ls<CR>")
 vim.keymap.set("n", "<leader>rb", ":edit!<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

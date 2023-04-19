@@ -1,5 +1,4 @@
 {
-    "editor.tabSize": 2,
     "[terraform]": {
         "editor.defaultFormatter": "hashicorp.terraform"
     },
@@ -10,13 +9,17 @@
         "vscode-kubernetes.minikube-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
         "vscode-kubernetes.helm-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/helm/darwin-arm64/helm"
     },
-    "editor.lineNumbers": "on",
+    // Vim settings or VSCode equivalent
+    "editor.cursorSurroundingLines": 8,
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?", // remove hypen from word separators
+    "editor.lineNumbers": "relative",
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
     },
+    // Vim keybindings
     "vim.normalModeKeyBindingsNonRecursive": [
         {
           "before": ["tab"],
@@ -25,6 +28,61 @@
         {
           "before": ["shift+tab"],
           "commands": ["workbench.action.previousEditor"]
+        },
+        {
+          "before": ["<leader>", "backspace"],
+          "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+          "before": ["<leader>", "m", "d"],
+          "commands": ["markdown.showPreviewToSide"],
+          "when": ["editorLangId == 'markdown'"]
+        },
+        {
+          "before": ["<leader>", "/"],
+          "commands": ["editor.action.commentLine"]
+        },
+        {
+          "before": ["<leader>", "e"],
+          "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        // Delete without sending to clipboard register
+        {
+          "before": ["<leader>", "d"],
+          "after": ["\"", "_", "d"]
+        },
+        // Center cursor after scrolling page
+        {
+          "before": ["ctrl+d"],
+          "after": ["ctrl+d", "z", "z"]
+        },
+        {
+          "before": ["ctrl+u"],
+          "after": ["ctrl+u", "z", "z"]
+        },
+        // Center cursor when searching
+        {
+          "before": ["n"],
+          "after": ["n", "z", "z", "z", "v"]
+        },
+        {
+          "before": ["N"],
+          "after": ["N", "z", "z", "z", "v"]
+        }
+        // vim.keymap.set("n", "n", "nzzzv")
+        // vim.keymap.set("n", "N", "Nzzzv")
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "/"],
+          "commands": ["editor.action.commentLine"]
+        },
+        // Delete without sending to clipboard register
+        {
+          "before": ["<leader>", "d"],
+          "after": ["\"", "_", "d"]
         }
     ],
+    // Nerd Font
+    "terminal.integrated.fontFamily": "MesloLGS NF",
 }

@@ -40,6 +40,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -s ${BASEDIR}/.zshrc ~/.zshrc
 ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/custom-oh-my-zsh ~/.oh-my-zsh/custom
+ln -s ${BASEDIR}/.p10k.zsh ~/.p10k.zsh
 
 echo "====================="
 echo "Cloning tmux config"

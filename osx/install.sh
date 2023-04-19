@@ -17,6 +17,13 @@ then
 fi
 
 echo "====================="
+echo "Creating Symlinks for OSX specific files"
+echo "====================="
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ln -s ${BASEDIR}/vs-code/settings.json ~/Library/Application Support/Code/User/settings.json
+ln -s ${BASEDIR}/vs-code/keybindings.json ~/Library/Application Support/Code/User/keybindings.json
+
+echo "====================="
 echo "Running brew bundle"
 echo "====================="
 brew bundle --file "~/dotfiles/osx/Brewfile"

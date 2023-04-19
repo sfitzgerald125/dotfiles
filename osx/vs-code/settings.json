@@ -1,0 +1,30 @@
+{
+    "editor.tabSize": 2,
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.helm-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/helm/darwin-arm64/helm"
+    },
+    "editor.lineNumbers": "on",
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["tab"],
+          "commands": ["workbench.action.nextEditor"]
+        },
+        {
+          "before": ["shift+tab"],
+          "commands": ["workbench.action.previousEditor"]
+        }
+    ],
+}

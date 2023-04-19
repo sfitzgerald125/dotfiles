@@ -1,16 +1,13 @@
 // Place your key bindings in this file to override the defaults
 [
+  // tab navigation
   {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
+    "key": "ctrl+a tab",
+    "command": "workbench.action.nextEditor"
   },
   {
-    "key": "cmd+shift+n",
-    "command": "explorer.newFolder"
-  },
-  {
-    "key": "cmd+w",
-    "command": "workbench.action.closeActiveEditor"
+    "key": "ctrl+a shift+tab",
+    "command": "workbench.action.previousEditor"
   },
   {
     "key": "ctrl+tab",
@@ -22,6 +19,7 @@
     "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
   },
+  // Navigate panes
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp"
@@ -58,6 +56,7 @@
     "command": "workbench.action.nextPanelView",
     "when": "panelFocus"
   },
+  // Split Editors
   {
     "key": "ctrl+a shift+\\",
     "command": "workbench.action.splitEditor"
@@ -66,11 +65,17 @@
     "key": "ctrl+a -",
     "command": "workbench.action.splitEditorDown",
   },
+  // Close Editors
   {
     "key": "ctrl+a x",
     "command": "workbench.action.closeActiveEditor"
   },
   {
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // different navigation keys
+  {
     "key": "shift+cmd+g",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
@@ -90,4 +95,117 @@
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
   },
+  // file explorer shortcuts
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // Folding
+  {
+    "key": "ctrl+a f",
+    "command": "editor.fold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+f",
+    "command": "editor.foldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+1",
+    "command": "editor.foldLevel1",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+2",
+    "command": "editor.foldLevel2",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+3",
+    "command": "editor.foldLevel3",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+4",
+    "command": "editor.foldLevel4",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+5",
+    "command": "editor.foldLevel5",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+6",
+    "command": "editor.foldLevel6",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+7",
+    "command": "editor.foldLevel7",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  // Unfolding
+  {
+    "key": "ctrl+a u",
+    "command": "editor.unfold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+a cmd+u",
+    "command": "editor.unfoldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+f",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "-editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "cmd+f",
+    "command": "-actions.find",
+    "when": "editorFocus || editorIsOpen"
+  }
 ]

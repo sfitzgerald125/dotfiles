@@ -38,6 +38,8 @@ vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bl", ":ls<CR>")
 vim.keymap.set("n", "<leader>rb", ":edit!<CR>")
+
+-- Change file perms
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Markdown

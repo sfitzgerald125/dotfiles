@@ -3,11 +3,13 @@
   // tab navigation
   {
     "key": "ctrl+a tab",
-    "command": "workbench.action.nextEditor"
+    "command": "workbench.action.nextEditor",
+    "when":  "!terminalFocus"
   },
   {
     "key": "ctrl+a shift+tab",
-    "command": "workbench.action.previousEditor"
+    "command": "workbench.action.previousEditor",
+    "when":  "!terminalFocus"
   },
   {
     "key": "ctrl+tab",
@@ -30,7 +32,8 @@
   },
   {
     "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
+    "command": "workbench.action.navigateLeft",
+    "when": "vim.mode != 'Insert' && !panelFocus"
   },
   {
     "key": "ctrl+l",
@@ -48,32 +51,30 @@
   },
   {
     "key": "ctrl+h",
-    "command": "workbench.action.previousPanelView",
-    "when": "panelFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.nextPanelView",
-    "when": "panelFocus"
+    "command": "workbench.action.navigateLeft",
+    "when": "panelFocus && vim.mode != 'Insert'"
   },
   // Split Editors
   {
     "key": "ctrl+a shift+\\",
-    "command": "workbench.action.splitEditor"
+    "command": "workbench.action.splitEditor",
+    "when": "!terminalFocus"
   },
   {
     "key": "ctrl+a -",
     "command": "workbench.action.splitEditorDown",
+    "when":  "!terminalFocus"
   },
   // Close Editors
   {
     "key": "ctrl+a x",
-    "command": "workbench.action.closeActiveEditor"
+    "command": "workbench.action.closeActiveEditor",
+    "when":  "!terminalFocus"
   },
-  {
-    "key": "cmd+w",
-    "command": "workbench.action.closeActiveEditor"
-  },
+  // {
+  //   "key": "cmd+w",
+  //   "command": "workbench.action.closeActiveEditor"
+  // },
   // different navigation keys
   {
     "key": "shift+cmd+g",
@@ -131,62 +132,72 @@
     "command": "filesExplorer.cut",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  {
+    "key": "ctrl+u",
+    "command": "list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
   // Folding
   {
     "key": "ctrl+a f",
     "command": "editor.fold",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+f",
     "command": "editor.foldAll",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+1",
     "command": "editor.foldLevel1",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+2",
     "command": "editor.foldLevel2",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+3",
     "command": "editor.foldLevel3",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+4",
     "command": "editor.foldLevel4",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+5",
     "command": "editor.foldLevel5",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+6",
     "command": "editor.foldLevel6",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+7",
     "command": "editor.foldLevel7",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   // Unfolding
   {
     "key": "ctrl+a u",
     "command": "editor.unfold",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "ctrl+a cmd+u",
     "command": "editor.unfoldAll",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
     "key": "cmd+f",
@@ -207,5 +218,54 @@
     "key": "cmd+f",
     "command": "-actions.find",
     "when": "editorFocus || editorIsOpen"
-  }
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-deleteRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  // Terminal Navigation
+  {
+    "key": "ctrl+a m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "panelFocus"
+  },
+  {
+    "key": "ctrl+a n",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+a p",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+a ,",
+    "command": "workbench.action.terminal.rename"
+  },
+  {
+    "key": "ctrl+a c",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+a x",
+    "command": "workbench.action.terminal.kill",
+  },
 ]

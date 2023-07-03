@@ -21,6 +21,17 @@
     },
     // Vim keybindings
     "vim.normalModeKeyBindingsNonRecursive": [
+        // GitHub Copilot
+        {
+          "before": ["<leader>", "g", "h", "a"],
+          "commands": ["github.copilot.acceptCursorPanelSolution"],
+          "when": "github.copilot.activated && github.copilot.panelVisible"
+        },
+        {
+          "before": ["<leader>", "g", "h", "h"],
+          "commands": ["github.copilot.generate"],
+          "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+        },
         // Navigate editors
         {
           "before": ["tab"],
@@ -84,6 +95,11 @@
           "before": ["<leader>", "v", "r", "n"],
           "commands": ["editor.action.rename"],
           "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
+        {
+          "before": ["<leader>", "v", "c", "a"],
+          "commands": ["editor.action.quickFix"],
+          "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
         },
         // Delete without sending to clipboard register
         {
@@ -150,4 +166,7 @@
     "editor.tabSize": 2,
     "git.ignoreMissingGitWarning": true,
     "editor.inlineSuggest.enabled": true,
+    "tailwindCSS.includeLanguages": {
+      "plaintext": "typescript"
+    },
 }

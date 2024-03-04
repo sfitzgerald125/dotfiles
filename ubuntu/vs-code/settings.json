@@ -1,0 +1,193 @@
+{
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform"
+    },
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.tabSize": 4
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.helm-path.mac": "/Users/sfitzgerald/.vs-kubernetes/tools/helm/darwin-arm64/helm"
+    },
+    // Vim settings or VSCode equivalent
+    "editor.cursorSurroundingLines": 8,
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?", // remove hypen from word separators
+    "editor.lineNumbers": "relative",
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    // Vim keybindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // GitHub Copilot
+        {
+          "before": ["<leader>", "g", "h", "a"],
+          "commands": ["github.copilot.acceptCursorPanelSolution"],
+          "when": "github.copilot.activated && github.copilot.panelVisible"
+        },
+        {
+          "before": ["<leader>", "g", "h", "h"],
+          "commands": ["github.copilot.generate"],
+          "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+        },
+        // Navigate editors
+        {
+          "before": ["tab"],
+          "commands": ["workbench.action.nextEditor"]
+        },
+        {
+          "before": ["shift+tab"],
+          "commands": ["workbench.action.previousEditor"]
+        },
+        // Close editors
+        {
+          "before": ["<leader>", "backspace"],
+          "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+          "before": ["<leader>","shift+backspace"],
+          "commands": ["workbench.action.closeOtherEditors"]
+        },
+        // Markdown preview
+        {
+          "before": ["<leader>", "m", "d"],
+          "commands": ["markdown.showPreviewToSide"],
+          "when": ["editorLangId == 'markdown'"]
+        },
+        // Comment line
+        {
+          "before": ["<leader>", "/"],
+          "commands": ["editor.action.commentLine"]
+        },
+        // Open/close sidebar
+        {
+          "before": ["<leader>", "e"],
+          "commands": ["workbench.action.toggleSidebarVisibility", "workbench.files.action.collapseExplorerFolders"]
+        },
+        // LSP shortcuts
+        {
+          "before": ["g", "d"],
+          "commands": ["editor.action.revealDefinition"],
+          "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+          "before": ["shift+k"],
+          "commands": ["editor.action.showDefinitionPreviewHover"]
+        },
+        {
+          "before": ["[", "d"],
+          "commands": ["editor.action.marker.next"],
+          "when": "editorFocus"
+        },
+        {
+          "before": ["]", "d"],
+          "commands": ["editor.action.marker.prev"],
+          "when": "editorFocus"
+        },
+        {
+          "before": ["<leader>", "v", "r", "r"],
+          "commands": ["editor.action.referenceSearch.trigger"],
+          "when": "editorFocus"
+        },
+        {
+          "before": ["<leader>", "v", "r", "n"],
+          "commands": ["editor.action.rename"],
+          "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
+        {
+          "before": ["<leader>", "v", "c", "a"],
+          "commands": ["editor.action.quickFix"],
+          "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        // Delete without sending to clipboard register
+        {
+          "before": ["<leader>", "d"],
+          "after": ["\"", "_", "d"]
+        },
+        // Center cursor after scrolling page
+        {
+          "before": ["ctrl+d"],
+          "after": ["ctrl+d", "z", "z"]
+        },
+        {
+          "before": ["ctrl+u"],
+          "after": ["ctrl+u", "z", "z"]
+        },
+        // Center cursor when searching
+        {
+          "before": ["n"],
+          "after": ["n", "z", "z", "z", "v"]
+        },
+        {
+          "before": ["N"],
+          "after": ["N", "z", "z", "z", "v"]
+        },
+        // Make file executable/unexecutable
+        {
+          "before": ["<leader>","x"],
+          "commands": ["chmod.plusX"]
+        },
+        {
+          "before": ["<leader>","-","x"],
+          "commands": ["chmod.minusX"]
+        },
+        // Yank to end of line instead of full line
+        {
+          "before": ["shift+y"],
+          "after": ["y", "$"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "/"],
+          "commands": ["editor.action.commentLine"]
+        },
+        // Delete without sending to clipboard register
+        {
+          "before": ["<leader>", "d"],
+          "after": ["\"", "_", "d"]
+        },
+        {
+          "before": ["<leader>", "c"],
+          "after": ["\"", "_", "c"]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["ctrl+h"],
+        "commands": ["editor.action.triggerSuggest"],
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+      },
+    ],
+    // Nerd Font
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.tabSize": 2,
+    "git.ignoreMissingGitWarning": true,
+    "editor.inlineSuggest.enabled": true,
+    "tailwindCSS.includeLanguages": {
+      "plaintext": "typescript"
+    },
+    "github.copilot.enable": {
+      "*": false,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false
+    },
+    "window.zoomLevel": 1,
+    "terminal.external.osxExec": "iTerm.app",
+}

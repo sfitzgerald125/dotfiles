@@ -86,6 +86,16 @@
           "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
         },
         {
+          "before": ["g", "d"],
+          "commands": ["typescript.goToSourceDefinition"],
+          "when": "typescript.isManagedFile && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+          "before": ["g", "t", "d"],
+          "commands": ["editor.action.goToTypeDefinition"],
+          "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
           "before": ["shift+k"],
           "commands": ["editor.action.showDefinitionPreviewHover"]
         },
@@ -190,4 +200,5 @@
     },
     "window.zoomLevel": 1,
     "terminal.external.osxExec": "iTerm.app",
+    "editor.accessibilitySupport": "off",
 }

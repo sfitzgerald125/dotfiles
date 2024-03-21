@@ -32,6 +32,7 @@
         "<C-a>": false,
         "<C-f>": false
     },
+    "keyboard.dispatch": "keyCode",
     // Vim keybindings
     "vim.normalModeKeyBindingsNonRecursive": [
         // GitHub Copilot
@@ -175,7 +176,7 @@
       },
     ],
     // Nerd Font
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontFamily": "monospace",
     "editor.tabSize": 2,
     "git.ignoreMissingGitWarning": true,
     "editor.inlineSuggest.enabled": true,

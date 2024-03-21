@@ -1,10 +1,14 @@
 // Place your key bindings in this file to override the defaults
 [
-  // tab navigation
+  // #region Tab Navigation
   {
     "key": "ctrl+a tab",
     "command": "workbench.action.nextEditor",
     "when":  "!terminalFocus"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-workbench.action.nextEditor"
   },
   {
     "key": "ctrl+a shift+tab",
@@ -12,16 +16,11 @@
     "when":  "!terminalFocus"
   },
   {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.previousEditor"
   },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
-  },
-  // Navigate panes
+  // #endregion
+  // #region Navigate panes
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp"
@@ -54,30 +53,63 @@
     "command": "workbench.action.navigateLeft",
     "when": "panelFocus && vim.mode != 'Insert'"
   },
-  // Split Editors
+  // #endregion
+  // #region Split Editors
   {
     "key": "ctrl+a shift+\\",
     "command": "workbench.action.splitEditor",
     "when": "!terminalFocus"
   },
   {
+    "key": "ctrl+\\",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
     "key": "ctrl+a -",
     "command": "workbench.action.splitEditorDown",
     "when":  "!terminalFocus"
   },
-  // Close Editors
+  {
+    "key": "ctrl+k ctrl+\\",
+    "command": "-workbench.action.splitEditorDown"
+  },
+  // #endregion
+  // #region Close Editors
   {
     "key": "ctrl+a x",
     "command": "workbench.action.closeActiveEditor",
     "when":  "!terminalFocus"
   },
-  // {
-  //   "key": "cmd+w",
-  //   "command": "workbench.action.closeActiveEditor"
-  // },
-  // different navigation keys
   {
-    "key": "shift+cmd+g",
+    "key": "meta+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  // #endregion
+  // #region Workbench toggles
+  {
+    "key": "shift+meta+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+meta+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+meta+g",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   },
@@ -86,17 +118,8 @@
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
   },
-  {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
-  },
-  // file explorer shortcuts
+  // #endregion
+  // #region File Explorer Shortcuts
   {
     "key": "enter",
     "command": "-renameFile",
@@ -142,80 +165,82 @@
     "command": "list.focusPageDown",
     "when": "listFocus && !inputFocus"
   },
-  // Folding
+  // #endregion
+  // #region Folding
   {
     "key": "ctrl+a f",
     "command": "editor.fold",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+f",
+    "key": "ctrl+a meta+f",
     "command": "editor.foldAll",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+1",
+    "key": "ctrl+a meta+1",
     "command": "editor.foldLevel1",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+2",
+    "key": "ctrl+a meta+2",
     "command": "editor.foldLevel2",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+3",
+    "key": "ctrl+a meta+3",
     "command": "editor.foldLevel3",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+4",
+    "key": "ctrl+a meta+4",
     "command": "editor.foldLevel4",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+5",
+    "key": "ctrl+a meta+5",
     "command": "editor.foldLevel5",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+6",
+    "key": "ctrl+a meta+6",
     "command": "editor.foldLevel6",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+7",
+    "key": "ctrl+a meta+7",
     "command": "editor.foldLevel7",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
-  // Unfolding
+  // #endregion
+  // #region Unfolding
   {
     "key": "ctrl+a u",
     "command": "editor.unfold",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "ctrl+a cmd+u",
+    "key": "ctrl+a meta+u",
     "command": "editor.unfoldAll",
     "when": "editorTextFocus && foldingEnabled && !terminalFocus"
   },
   {
-    "key": "cmd+f",
+    "key": "meta+f",
     "command": "editor.action.startFindReplaceAction",
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "alt+cmd+f",
+    "key": "alt+meta+f",
     "command": "-editor.action.startFindReplaceAction",
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "alt+cmd+f",
+    "key": "alt+meta+f",
     "command": "actions.find",
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "cmd+f",
+    "key": "meta+f",
     "command": "-actions.find",
     "when": "editorFocus || editorIsOpen"
   },
@@ -229,7 +254,8 @@
     "command": "-list.focusPageDown",
     "when": "listFocus && !inputFocus"
   },
-  // Terminal Navigation
+  // #endregion
+  // #region Terminal Navigation
   {
     "key": "ctrl+a m",
     "command": "workbench.action.toggleMaximizedPanel",
@@ -246,8 +272,13 @@
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
   {
-    "key": "shift+cmd+]",
+    "key": "ctrl+pagedown",
     "command": "-workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
   {
@@ -268,4 +299,47 @@
     "key": "ctrl+a x",
     "command": "workbench.action.terminal.kill",
   },
+  // #endregion
+  // #region Quick Open
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+meta+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "f1",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "meta+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  // #endregion
+  // #region alt/ctrl remaps
+  {
+    "key": "meta+n",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  // #endregion
 ]

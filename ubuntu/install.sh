@@ -8,6 +8,13 @@ fi
 echo "Downloading apt packages..."
 grep -vE '^#' ./linux/my-apt-packages | xargs sudo apt install -y
 
+echo "====================="
+echo "Creating Symlinks for Ubuntu specific files"
+echo "====================="
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ln -s ${BASEDIR}/vs-code/settings.json ~/.config/Code/User/settings.json
+ln -s ${BASEDIR}/vs-code/keybindings.json ~/.config/Code/User/keybindings.json
+
 echo "Downloading packages from source..."
 ./linux/downloads-from-source.sh
 

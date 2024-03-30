@@ -21,6 +21,7 @@ echo "Creating Symlinks for OSX specific files"
 echo "====================="
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -s ${BASEDIR}/.zshrc ~/.zshrc
+ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/vs-code/settings.json ~/Library/Application Support/Code/User/settings.json
 ln -s ${BASEDIR}/vs-code/keybindings.json ~/Library/Application Support/Code/User/keybindings.json
 

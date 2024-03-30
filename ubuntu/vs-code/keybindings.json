@@ -341,5 +341,15 @@
     "key": "alt+n",
     "command": "-workbench.action.files.newUntitledFile"
   },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
   // #endregion
 ]

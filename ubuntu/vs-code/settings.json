@@ -168,13 +168,6 @@
           "after": ["\"", "_", "c"]
         },
     ],
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["ctrl+h"],
-        "commands": ["editor.action.triggerSuggest"],
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-      },
-    ],
     // Nerd Font
     "terminal.integrated.fontFamily": "monospace",
     "editor.tabSize": 2,

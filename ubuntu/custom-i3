@@ -1,0 +1,6 @@
+set_from_resource $wm.binding.tabbed_mode wm.binding.tabbed_mode s
+bindsym $mod+$wm.binding.tabbed_mode layout tabbed
+
+set_from_resource $wm.binding.default_mode wm.binding.default_mode e
+bindsym $mod+$wm.binding.default_mode layout default
+

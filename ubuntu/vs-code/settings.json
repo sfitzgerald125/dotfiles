@@ -15,7 +15,7 @@
         "editor.defaultFormatter": "hashicorp.terraform"
     },
     "[python]": {
-        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
         "editor.tabSize": 4
     },
     "vs-kubernetes": {
@@ -182,6 +182,5 @@
       "markdown": false,
       "scminput": false
     },
-    "window.zoomLevel": 1,
-    "terminal.external.osxExec": "iTerm.app",
+    "window.zoomLevel": 1
 }

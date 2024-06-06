@@ -22,6 +22,8 @@ brew "watch"
 brew "xz"
 brew "wget"
 brew "prettierd"
+brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/skhd"
 
 cask "google-cloud-sdk"
 cask "spotify"

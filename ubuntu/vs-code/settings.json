@@ -158,6 +158,11 @@
           "before": ["<leader>", "/"],
           "commands": ["editor.action.commentLine"]
         },
+        {
+          "before": ["<leader>", "w"],
+          "commands": ["editor.emmet.action.wrapWithAbbreviation"],
+          "when": "editorFocus"
+        },
         // Delete without sending to clipboard register
         {
           "before": ["<leader>", "d"],
@@ -182,5 +187,6 @@
       "markdown": false,
       "scminput": false
     },
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }

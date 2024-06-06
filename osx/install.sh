@@ -24,14 +24,7 @@ ln -s ${BASEDIR}/.zshrc ~/.zshrc
 ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/vs-code/settings.json ~/Library/Application Support/Code/User/settings.json
 ln -s ${BASEDIR}/vs-code/keybindings.json ~/Library/Application Support/Code/User/keybindings.json
-ln -s ${BASEDIR}/.config ~/.config
-
-
-echo "====================="
-echo "Starting SkHD and YABAI"
-echo "====================="
-skhd --start-service
-yabai --start-service
+ln -s ${BASEDIR}/.config/* ~/.config
 
 echo "====================="
 echo "Running brew bundle"
@@ -40,5 +33,11 @@ brew bundle --file "~/dotfiles/osx/Brewfile"
 echo "====================="
 echo "Finished brew bundle"
 echo -e "=====================\n"
+
+echo "====================="
+echo "Starting SKHD and YABAI"
+echo "====================="
+skhd --start-service
+yabai --start-service
 
 # ./shared/install.sh
